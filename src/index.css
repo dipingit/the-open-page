@@ -4,4 +4,6 @@
 @theme {
     --font-poppins: "Poppins", "serif"; 
   }
-
+a.active{
+  background-color: #E7E7E7;
+}
