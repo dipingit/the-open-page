@@ -22,11 +22,11 @@ const Login = () => {
             <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
                 <h2 className='text-2xl font-semibold text-center'>Log in to Your Account</h2>
                 <form onSubmit={handleSubmit} className="card-body">
-                    <fieldset className="fieldset">
+                    <fieldset className="fieldset space-y-3">
                         <label className="label">Email</label>
-                        <input name='email' type="email" className="input" placeholder="Email" />
+                        <input name='email' type="email" className="input w-full" placeholder="Email" />
                         <label className="label">Password</label>
-                        <input name='password' type="password" className="input" placeholder="Password" />
+                        <input name='password' type="password" className="input w-full" placeholder="Password" />
                         <button className="btn btn-neutral mt-4">Login</button>
                     </fieldset>
                     <p className='font-semibold text-center'>Don't have an Account? <Link className='text-red-500' to='/auth/register'>Register</Link> </p>

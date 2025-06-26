@@ -1,5 +1,6 @@
 import { FaRegBookmark, FaShareAlt, FaEye, FaStar } from 'react-icons/fa';
 import { BsStarFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const NewsCard = ({ news }) => {
   const {
@@ -53,7 +54,7 @@ const NewsCard = ({ news }) => {
         {details.length > 250 ? (
           <p>
             {details.slice(0, 250)}...
-            <span className="text-red-500 font-medium cursor-pointer"> Read More</span>
+            <Link to={`/news/${news._id}`} className="text-red-500 font-medium cursor-pointer">Read More</Link>
           </p>
         ) : (
           <p>{details}</p>

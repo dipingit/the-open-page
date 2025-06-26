@@ -31,14 +31,14 @@ const Register = () => {
                 <form onSubmit={handleSubmit} className="card-body">
                     <fieldset className="fieldset">
                         <label className="label">Your Name</label>
-                        <input type="text" name="name" className="input" placeholder="Enter your name" />
+                        <input type="text" name="name" className="input w-full" placeholder="Enter your name" />
                         <label className="label">Photo URL</label>
-                        <input type="text" name="photoURL" className="input" placeholder="Enter your photo URL" />
+                        <input type="text" name="photoURL" className="input w-full" placeholder="Enter your photo URL" />
                         <label className="label">Email</label>
-                        <input type="email" name="email" className="input" placeholder="Enter your email address" />
+                        <input type="email" name="email" className="input w-full" placeholder="Enter your email address" />
                         <label className="label">Password</label>
-                        <input type="password" name="password" className="input" placeholder="Enter your Password" />
-                        <button className="btn btn-neutral mt-4">Register</button>
+                        <input type="password" name="password" className="input w-full" placeholder="Enter your Password" />
+                        <button className="btn btn-neutral mt-4 w-full">Register</button>
                     </fieldset>
                     <p className='font-semibold text-center'>Already have an Account? <Link className='text-red-500' to='/auth/login'>Login</Link> </p>
                 </form>
