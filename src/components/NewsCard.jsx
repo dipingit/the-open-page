@@ -24,7 +24,7 @@ const NewsCard = ({ news }) => {
           />
           <div>
             <h2 className="font-semibold text-sm">{author.name}</h2>
-            <p className="text-xs text-gray-500">{author.published_date.split(' ')[0]}</p>
+            <p className="text-xs text-gray-500">{author?.published_date ? author.published_date.split(' ')[0] : 'Unknown Date'}</p>
           </div>
         </div>
         <div className="flex gap-3 text-gray-500 text-lg">

@@ -2,12 +2,10 @@ import RightNavbar from '../layout-component/RightNavbar';
 import Header from '../Header';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
-import Navbar from '../Navbar';
 
 const NewsDetails = () => {
     const data = useLoaderData();
     const news = data.data[0];
-    console.log(news);
     return (
         <div>
             <header>

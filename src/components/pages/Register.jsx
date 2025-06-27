@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
     const {createNewUser, setUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         //get form data
@@ -12,11 +14,11 @@ const Register = () => {
         const photoURL = form.get('photoURL');
         const email = form.get('email');
         const password = form.get('password');
-        console.log({name, photoURL, email, password});
         createNewUser(email, password).then((result) => {
             const user = result.user;
             setUser(user);
             console.log(user);
+            navigate(location?.state ? location.state : '/');
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

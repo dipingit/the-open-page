@@ -31,6 +31,7 @@ const AuthProvider = ({children}) => {
         logOut,
         userLogin,
         loading,
+        
     };
 
     useEffect(() => {
