@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
     const {userLogin, setUser} = useContext(AuthContext);
+    const [error, setError] = useState({})
     const location = useLocation();
     const navigate = useNavigate();
     console.log(location);
@@ -16,8 +17,8 @@ const Login = () => {
             const user = result.user;
             setUser(user);
             navigate(location?.state ? location.state : '/');
-        }).catch(error => {
-            alert(error.code);
+        }).catch(err => {
+            setError({...error, login: err.code});
         });
     }
     return (
@@ -30,6 +31,9 @@ const Login = () => {
                         <input name='email' type="email" className="input w-full" placeholder="Email" />
                         <label className="label">Password</label>
                         <input name='password' type="password" className="input w-full" placeholder="Password" />
+                        {
+                            error.login && <label className='text-red-600'>{error.login}</label>
+                        }
                         <button className="btn btn-neutral mt-4">Login</button>
                     </fieldset>
                     <p className='font-semibold text-center'>Don't have an Account? <Link className='text-red-500' to='/auth/register'>Register</Link> </p>
